@@ -29,15 +29,15 @@ namespace BethanysPieShop
         {
             if (env.IsDevelopment())
             {
-                // see detailed exceptions (yellow screen of death) 
-                //only if it's in development environment
+                // see detailed exceptions
+                // only if it's in development environment
                 app.UseDeveloperExceptionPage();
             }
             
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseRouting();
 
+            app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(name: "default",
