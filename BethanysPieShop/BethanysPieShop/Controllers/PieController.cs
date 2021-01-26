@@ -23,9 +23,18 @@ namespace BethanysPieShop.Controllers
         {
             var piesListViewModel = new PiesListViewModel();
             piesListViewModel.Pies = _pieRepository.AllPies;
-
             piesListViewModel.CurrentCategory = "Cheese Cakes";
+            
             return View(piesListViewModel);
         }
+
+        public ViewResult GetPie(int id)
+        {
+            var getPieViewModel = new GetPieViewModel();
+            getPieViewModel.Pie = _pieRepository.GetPieById(id);
+            getPieViewModel.Pie.Category = new Category() { CategoryId = 1, Name = "Fruit Pies" };
+
+            return View(getPieViewModel);
+        } 
     }
 }
