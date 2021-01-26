@@ -35,6 +35,18 @@ namespace BethanysPieShop.Controllers
             getPieViewModel.Pie.Category = new Category() { CategoryId = 1, Name = "Fruit Pies" };
 
             return View(getPieViewModel);
-        } 
+        }
+
+        public ViewResult GetPiesByCategory(int categoryId)
+        {
+            var getPiesByCategory = new GetPiesByCategoryViewModel();
+            getPiesByCategory.Pies =
+                _pieRepository
+                .AllPies
+                .Where(p =>
+                p.Category.CategoryId == categoryId);
+
+            return View(getPiesByCategory);
+        }
     }
 }

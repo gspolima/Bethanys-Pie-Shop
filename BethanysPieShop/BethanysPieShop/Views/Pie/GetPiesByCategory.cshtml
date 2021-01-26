@@ -1,0 +1,10 @@
+﻿@model GetPiesByCategoryViewModel
+
+<ul>
+    @foreach(var pie in Model.Pies)
+    {
+        <li>@pie.PieId @pie.Name</li>
+        <li>@pie.Name</li>
+        <li>@pie.Price.ToString("c")</li>
+    }
+</ul>
