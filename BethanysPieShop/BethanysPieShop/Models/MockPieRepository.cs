@@ -11,10 +11,10 @@ namespace BethanysPieShop.Models
 
         public IEnumerable<Pie> AllPies => new List<Pie>()
         {
-            new Pie() { PieId = 1, Name = "Strawberry Pie", Price = (double)15.47, ShortDescription = "Made with fresh strawberries"},
-            new Pie() { PieId = 2, Name = "Rhubarb Pie", Price = (double)5.50, ShortDescription = "Delicious organic rhubarb"},
-            new Pie() { PieId = 3, Name = "Pumpkin Pie", Price = (double)12.00, ShortDescription = "Sweet pieces of pumpkin"},
-            new Pie() { PieId = 4, Name = "Cheese Cake", Price = (double)20.00, ShortDescription = "The latest and the greatest"}
+            new Pie() { PieId = 1, Name = "Strawberry Pie", Price = (double)15.47, ShortDescription = "Made with fresh strawberries", CategoryId = 2 },
+            new Pie() { PieId = 2, Name = "Rhubarb Pie", Price = (double)5.50, ShortDescription = "Delicious organic rhubarb", CategoryId = 2},
+            new Pie() { PieId = 3, Name = "Pumpkin Pie", Price = (double)12.00, ShortDescription = "Sweet pieces of pumpkin", CategoryId = 2},
+            new Pie() { PieId = 4, Name = "Cheese Cake", Price = (double)20.00, ShortDescription = "The latest and the greatest", CategoryId = 1}
         };
 
         public IEnumerable<Pie> PiesOfTheWeek { get; }

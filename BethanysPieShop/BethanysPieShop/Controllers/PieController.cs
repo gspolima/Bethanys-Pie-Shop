@@ -44,7 +44,7 @@ namespace BethanysPieShop.Controllers
                 _pieRepository
                 .AllPies
                 .Where(p =>
-                p.Category.CategoryId == categoryId);
+                p.CategoryId == categoryId);
 
             return View(getPiesByCategory);
         }
