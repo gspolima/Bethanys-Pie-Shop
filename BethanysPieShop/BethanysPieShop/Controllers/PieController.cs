@@ -23,30 +23,9 @@ namespace BethanysPieShop.Controllers
         {
             var piesListViewModel = new PiesListViewModel();
             piesListViewModel.Pies = _pieRepository.AllPies;
-            piesListViewModel.CurrentCategory = "Cheese Cakes";
+            piesListViewModel.CurrentCategory = "All Pies";
             
             return View(piesListViewModel);
-        }
-
-        public ViewResult GetPie(int id)
-        {
-            var getPieViewModel = new GetPieViewModel();
-            getPieViewModel.Pie = _pieRepository.GetPieById(id);
-            getPieViewModel.Pie.Category = new Category() { CategoryId = 1, Name = "Fruit Pies" };
-
-            return View(getPieViewModel);
-        }
-
-        public ViewResult GetPiesByCategory(int categoryId)
-        {
-            var getPiesByCategory = new GetPiesByCategoryViewModel();
-            getPiesByCategory.Pies =
-                _pieRepository
-                .AllPies
-                .Where(p =>
-                p.CategoryId == categoryId);
-
-            return View(getPiesByCategory);
         }
     }
 }
