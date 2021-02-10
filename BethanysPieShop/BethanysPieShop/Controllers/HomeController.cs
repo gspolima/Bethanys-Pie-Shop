@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BethanysPieShop.Models;
+using BethanysPieShop.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +10,21 @@ namespace BethanysPieShop.Controllers
 {
     public class HomeController : Controller
     {
+        private IPieRepository _pieRepository;
+
+        public HomeController(IPieRepository pieRepository)
+        {
+            _pieRepository = pieRepository;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            var homeViewModel = new HomeViewModel()
+            {
+                PiesOfTheWeek = _pieRepository.PiesOfTheWeek
+            };
+
+            return View(homeViewModel);
         }
     }
 }

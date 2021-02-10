@@ -1,1 +1,14 @@
-﻿<h1>Welcome to Bethany's Pie Shop</h1>
+﻿@model HomeViewModel
+
+<h1>Welcome to Bethany's Pie Shop</h1>
+
+<h3>Pies of the week</h3>
+<h4>Our weekly selection - just for you!</h4>
+
+<div class="row">
+    @foreach (var pie in Model.PiesOfTheWeek)
+    {
+        <partial name="_PieCards" model="pie"/>
+    }
+</div>
+
