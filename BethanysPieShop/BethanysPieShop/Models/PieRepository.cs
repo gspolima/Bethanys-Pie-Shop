@@ -20,7 +20,8 @@ namespace BethanysPieShop.Models
 
         public IEnumerable<Pie> PiesOfTheWeek => _appDbContext.Pies
             .Include(p => p.Category)
-            .Where(p => p.IsPieOfTheWeek);
+            .Where(p => p.IsPieOfTheWeek)
+            .OrderBy(p => p.Name);
 
         public Pie GetPieById(int pieId)
         {
